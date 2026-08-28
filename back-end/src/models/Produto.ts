@@ -37,6 +37,9 @@ export class Produto {
     @Column ({ type: 'boolean', default: true })
     ativo!: boolean;
 
+    @Column({ type: 'numeric', default: 0 })
+    estoque_atual!: number;
+
     @ManyToOne("Fornecedor", { nullable: true })
     @JoinColumn({ name: 'fornecedor_id' })
     fornecedor?: Fornecedor;
