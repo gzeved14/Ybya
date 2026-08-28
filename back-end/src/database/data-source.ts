@@ -7,17 +7,17 @@ import { Movimentacao } from '../models/Movimentacao';
 import { NotaFiscal } from '../models/NotaFiscal';
 import { Produto } from '../models/Produto';
 import { Fornecedor } from '../models/Fornecedor';
-import { ItemNotaFiscal } from '../models/item_nota_fiscal';
+import { ItemNotaFiscal } from '../models/Item_nota_fiscal';
 import { SnakeNamingStrategy } from '../database/snake-naming-strategy'
 
 export const AppDataSource = new DataSource({
   namingStrategy: new SnakeNamingStrategy(),
   type: 'postgres',
-  host: env.db.host,
-  port: env.db.port,
-  username: env.db.username,
-  password: env.db.password,
-  database: env.db.database,
+  host: env.DB_HOST,
+  port: env.DB_PORT,
+  username: env.DB_USER,
+  password: env.DB_PASSWORD,
+  database: env.DB_NAME,
   synchronize: false,
   logging: true,
   entities: [
