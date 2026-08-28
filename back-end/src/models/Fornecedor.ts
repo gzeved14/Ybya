@@ -19,7 +19,7 @@ export class Fornecedor {
     @PrimaryGeneratedColumn('uuid')
     id!: string;
 
-    @Column({ type: 'varchar', length: 255, nullable: false })
+    @Column({ type: 'varchar', length: 150, nullable: false })
     nome!: string;
 
     @Column({ type: 'varchar', length: 18, nullable: false })
@@ -36,6 +36,9 @@ export class Fornecedor {
 
     @UpdateDateColumn({ name: 'atualizado_em' })
     atualizadoEm!: Date;
+
+    @Column({ type: 'boolean', default: true })
+    ativo!: boolean;
 
     @ManyToOne("Loja")
     @JoinColumn({ name: 'loja_id' })
